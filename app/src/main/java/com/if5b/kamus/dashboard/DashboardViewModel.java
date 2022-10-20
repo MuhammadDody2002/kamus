@@ -1,4 +1,4 @@
-package com.if5b.kamus.ui.dashboard;
+package com.if5b.kamus.dashboard;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

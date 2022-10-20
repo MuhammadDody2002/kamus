@@ -4,21 +4,18 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Kamus implements Parcelable {
+
     private int id;
     private String title;
     private String description;
 
-    public Kamus() {
-
-    }
-
-    public Kamus(String title, String description) {
+    public Kamus(int id, String title, String description) {
+        this.id = id;
         this.title = title;
         this.description = description;
     }
 
-    public Kamus(int id, String title, String description) {
-        this.id = id;
+    public Kamus(String title, String description) {
         this.title = title;
         this.description = description;
     }
@@ -27,6 +24,18 @@ public class Kamus implements Parcelable {
         id = in.readInt();
         title = in.readString();
         description = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(title);
+        dest.writeString(description);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<Kamus> CREATOR = new Creator<Kamus>() {
@@ -65,15 +74,6 @@ public class Kamus implements Parcelable {
         this.description = description;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(id);
-        parcel.writeString(title);
-        parcel.writeString(description);
+    public Kamus() {
     }
 }

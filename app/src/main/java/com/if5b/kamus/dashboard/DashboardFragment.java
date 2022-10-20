@@ -1,4 +1,4 @@
-package com.if5b.kamus.ui.dashboard;
+package com.if5b.kamus.dashboard;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
